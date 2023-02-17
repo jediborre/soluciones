@@ -16,3 +16,20 @@ numbers.reduce((acc, number) => {
     acc[number] = acc[number] + 1;
     return acc;
 }, ans_2);
+
+// Preguntas 
+// Promises
+// LifeCycle React
+// var let const
+// como se define la cookie
+// $ vs $$
+// abstract class vs interface
+// patrones de diseño
+// Como se llama a la database mediante PHP
+// database_engines
+// how session works
+// how to create a session in code
+// Que version php has trabajado
+// Que tiene la version 7 de php
+// como se define patron singleton
+// principio solid en php
