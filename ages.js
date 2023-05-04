@@ -1,4 +1,12 @@
-const ages = [12,13,45,32,34,23,45,12,34,56,23,12,11,18,19];
+// Prueba tecnica para Luxoft
+
+// Otras preguntas
+/*
+1.-Explain the Event loop 2.-What is a promise? 3.-Explain Hoisting
+What do hoisting and closure mean? What "http" stands for?
+Promises, closures, scope, hoisting, ES6 new features Prototype.
+*/
+let ages = [12,13,45,32,34,23,45,12,34,56,23,12,11,18,19];
 let result = {
   minors: 0,
   adults: 0,
@@ -35,3 +43,35 @@ for (edad in tmp) {
     result.group.push(tmp_2);
 }
 console.log(result);
+
+//Simplificado
+
+//Output
+/*
+  {
+    minors: 2,
+    adults: 6,
+    group:[
+      {12: 3}, {13: 1}, ...
+    ]
+  }
+*/
+
+ages = [12,13,45,32,34,23,45,12,34,56,23,12,11,18,19];
+result = {
+  minors: 0,
+  adults: 0,
+  group: []
+}
+
+result.minors = ages.filter(age => age < 18).length;
+result.adults = ages.filter(age => age >= 18).length;
+result.group = ages.map(age => { 
+  ages.reduce((acc, age) => {
+    if (!acc.hasOwnProperty(age))
+      acc[age] = 0;
+    acc[age]++;
+    return acc;
+  }
+  , {})
+});
